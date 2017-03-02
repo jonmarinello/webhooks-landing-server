@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is just used to log that a webhook was delivered to this server's "landing" endpoint.
 
-Things you may want to cover:
+## Setup
+### Run this server
+$ rails s -p 8080
 
-* Ruby version
+### Run ngrok
+$ ./ngrok http -subdomain=webhooks-landing-server 8080
 
-* System dependencies
+### Hit it through
+http://webhooks-landing-server.ngrok.io/api/api_event
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Monitor it through
+http://localhost:4040/inspect/http and/or the rails log.
